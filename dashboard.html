@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Dashboard - FitBody</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="health-dashboard-body">
+  <aside class="health-sidebar">
+    <a href="index.html" class="health-brand"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+    <div class="sidebar-user-card">
+      <strong class="sidebar-username">Username</strong>
+      <span><i></i> Online</span>
+    </div>
+    <nav class="health-menu" aria-label="Dashboard navigation">
+      <a href="#overview" class="active"><span>OV</span> Overview</a>
+      <a href="workouts.html"><span>WO</span> Workouts</a>
+      <a href="classes.html"><span>CL</span> Classes</a>
+      <a href="membership.html"><span>MS</span> Membership</a>
+    </nav>
+    <a href="index.html" class="health-logout">Log Out</a>
+  </aside>
+
+  <main class="health-dashboard">
+    <header class="health-topbar">
+      <div>
+        <h1>My Fitness Dashboard</h1>
+        <p>Tuesday, June 9, 2026</p>
+      </div>
+    </header>
+
+    <section class="health-welcome-card" id="overview">
+      <div class="welcome-copy">
+        <p class="eyebrow">Good morning</p>
+        <h2>Welcome back,<br><span id="dashboardUsername">Username</span></h2>
+        <div class="health-score-row">
+          <div class="score-ring">
+            <strong>86</strong>
+            <span>/ 100</span>
+          </div>
+          <div>
+            <h3>Fitness Score: Strong</h3>
+            <p>Your weekly activity is on track. Keep your strength sessions and recovery consistent.</p>
+          </div>
+        </div>
+        <div class="health-actions">
+          <a href="programs.html" class="health-primary-action">Start Workout</a>
+          <a href="trainers.html" class="health-secondary-action">Book Trainer</a>
+          <a href="pricing.html" class="health-secondary-action">Manage Plan</a>
+        </div>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-tile">
+          <span>Weekly Workouts</span>
+          <strong>4 <small>/ 5</small></strong>
+          <p>On Track</p>
+        </article>
+        <article class="metric-tile">
+          <span>Calories Burned</span>
+          <strong>2,850</strong>
+          <p>Great Pace</p>
+        </article>
+        <article class="metric-tile">
+          <span>Active Minutes</span>
+          <strong>210</strong>
+          <p>Goal Met</p>
+        </article>
+        <article class="metric-tile">
+          <span>Current Streak</span>
+          <strong>12 <small>days</small></strong>
+          <p>Keep Going</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="health-summary-grid">
+      <article class="summary-card">
+        <span class="summary-icon">A</span>
+        <div>
+          <strong>3</strong>
+          <p>Upcoming Classes</p>
+        </div>
+      </article>
+      <article class="summary-card">
+        <span class="summary-icon pink">M</span>
+        <div>
+          <strong>4</strong>
+          <p>Active Programs</p>
+        </div>
+      </article>
+      <article class="summary-card">
+        <span class="summary-icon yellow">T</span>
+        <div>
+          <strong>2</strong>
+          <p>Trainer Sessions</p>
+        </div>
+      </article>
+      <article class="summary-card">
+        <span class="summary-icon rose">N</span>
+        <div>
+          <strong>5</strong>
+          <p>Coach Messages</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="health-panels" id="classes">
+      <article class="health-panel appointments-panel">
+        <div class="panel-heading">
+          <h2>Upcoming Classes</h2>
+          <a href="trainers.html">View All -></a>
+        </div>
+        <div class="appointment-item">
+          <div class="date-box">
+            <strong>12</strong>
+            <span>Jun</span>
+          </div>
+          <div>
+            <h3>Strength Foundations</h3>
+            <p>Coach Alex - Weight Floor</p>
+            <span>10:30 AM - Group Class</span>
+          </div>
+          <em>Confirmed</em>
+        </div>
+        <div class="appointment-item">
+          <div class="date-box">
+            <strong>18</strong>
+            <span>Jun</span>
+          </div>
+          <div>
+            <h3>HIIT Cardio Blast</h3>
+            <p>Coach Mike - Studio 2</p>
+            <span>7:00 AM - Conditioning</span>
+          </div>
+          <em>Upcoming</em>
+        </div>
+      </article>
+
+      <article class="health-panel vitals-panel">
+        <div class="panel-heading">
+          <h2>My Progress</h2>
+          <a href="#">Log Workout -></a>
+        </div>
+        <div class="vital-cards">
+          <div class="vital-card">
+            <span>Strength Goal</span>
+            <strong>72<small>%</small></strong>
+            <i style="width: 72%"></i>
+          </div>
+          <div class="vital-card">
+            <span>Cardio Goal</span>
+            <strong>64<small>%</small></strong>
+            <i style="width: 64%"></i>
+          </div>
+          <div class="vital-card">
+            <span>Recovery</span>
+            <strong>78<small>%</small></strong>
+            <i style="width: 78%"></i>
+          </div>
+          <div class="vital-card">
+            <span>Steps</span>
+            <strong>8,240</strong>
+            <i style="width: 69%"></i>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="health-panels bottom-panels" id="workouts">
+      <article class="health-panel">
+        <div class="panel-heading">
+          <h2>Training Goals</h2>
+          <a href="programs.html">Update -></a>
+        </div>
+        <div class="goal-list">
+          <div><span>Weekly workouts</span><strong>4 / 5</strong></div>
+          <div><span>Hydration</span><strong>2.5 L</strong></div>
+          <div><span>Calories burned</span><strong>2,850</strong></div>
+        </div>
+      </article>
+
+      <article class="health-panel" id="membership">
+        <div class="panel-heading">
+          <h2>Coach Team</h2>
+          <a href="trainers.html">Message -></a>
+        </div>
+        <div class="care-team">
+          <div><span>AJ</span><p>Alex Johnson<br><small>Strength Coach</small></p></div>
+          <div><span>MR</span><p>Mike Rivera<br><small>HIIT Coach</small></p></div>
+          <div><span>SC</span><p>Sarah Chen<br><small>Mobility Coach</small></p></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

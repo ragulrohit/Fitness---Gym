@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workouts - FitBody</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="health-dashboard-body">
+  <aside class="health-sidebar">
+    <a href="index.html" class="health-brand"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+    <div class="sidebar-user-card">
+      <strong class="sidebar-username">Username</strong>
+      <span><i></i> Online</span>
+    </div>
+    <nav class="health-menu" aria-label="Dashboard navigation">
+      <a href="dashboard.html"><span>OV</span> Overview</a>
+      <a href="workouts.html" class="active"><span>WO</span> Workouts</a>
+      <a href="classes.html"><span>CL</span> Classes</a>
+      <a href="membership.html"><span>MS</span> Membership</a>
+    </nav>
+    <a href="index.html" class="health-logout">Log Out</a>
+  </aside>
+
+  <main class="health-dashboard">
+    <header class="health-topbar">
+      <div>
+        <h1>My Workouts</h1>
+        <p>Your current training plan, weekly targets, and workout progress.</p>
+      </div>
+      <button class="notification-btn" type="button" aria-label="Notifications">!</button>
+    </header>
+
+    <section class="health-welcome-card">
+      <div class="welcome-copy">
+        <p class="eyebrow">Today&apos;s Plan</p>
+        <h2>Strength<br><span>Training</span></h2>
+        <div class="health-score-row">
+          <div class="score-ring">
+            <strong>45</strong>
+            <span>min</span>
+          </div>
+          <div>
+            <h3>Upper Body Power</h3>
+            <p>Complete your push, pull, and core session. Focus on controlled reps and strong form.</p>
+          </div>
+        </div>
+        <div class="health-actions">
+          <a href="programs.html#strength" class="health-primary-action">View Program</a>
+          <a href="dashboard.html" class="health-secondary-action">Back to Overview</a>
+        </div>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-tile">
+          <span>Workouts Done</span>
+          <strong>4 <small>/ 5</small></strong>
+          <p>On Track</p>
+        </article>
+        <article class="metric-tile">
+          <span>Volume</span>
+          <strong>18,400 <small>kg</small></strong>
+          <p>Up 8%</p>
+        </article>
+        <article class="metric-tile">
+          <span>Best Streak</span>
+          <strong>12 <small>days</small></strong>
+          <p>Strong</p>
+        </article>
+        <article class="metric-tile">
+          <span>Recovery</span>
+          <strong>78<small>%</small></strong>
+          <p>Ready</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="health-panels bottom-panels">
+      <article class="health-panel">
+        <div class="panel-heading">
+          <h2>Workout Split</h2>
+          <a href="programs.html">Change -></a>
+        </div>
+        <div class="goal-list">
+          <div><span>Monday</span><strong>Push</strong></div>
+          <div><span>Wednesday</span><strong>Pull</strong></div>
+          <div><span>Friday</span><strong>Legs</strong></div>
+        </div>
+      </article>
+
+      <article class="health-panel">
+        <div class="panel-heading">
+          <h2>Next Exercises</h2>
+          <a href="#">Start -></a>
+        </div>
+        <div class="goal-list">
+          <div><span>Bench Press</span><strong>4 x 8</strong></div>
+          <div><span>Lat Pulldown</span><strong>3 x 12</strong></div>
+          <div><span>Plank</span><strong>3 x 45s</strong></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

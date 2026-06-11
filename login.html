@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - FitBody</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💪%3C/text%3E%3C/svg%3E">
+  <style>
+    .auth-tabs {
+      display: flex;
+      margin-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .auth-tab {
+      flex: 1;
+      padding: 14px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-bottom: 3px solid transparent;
+      color: var(--gray);
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .auth-tab.active {
+      color: var(--light);
+      border-bottom-color: var(--primary);
+    }
+
+    .auth-tab:hover {
+      color: var(--light);
+    }
+
+    .auth-form {
+      display: none;
+    }
+
+    .auth-form.active {
+      display: block;
+    }
+
+    .password-toggle {
+      position: relative;
+    }
+
+    .password-toggle .toggle-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--gray);
+      cursor: pointer;
+      font-size: 14px;
+      padding: 4px 8px;
+      font-weight: 600;
+    }
+
+    .password-toggle .toggle-btn:hover {
+      color: var(--light);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      padding: 16px 28px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      z-index: 9999;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideUp 0.3s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .login-form {
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .login-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="logo"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#programs">Programs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="trainers.html">Trainers</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="login.html" class="btn btn-primary">Join Now</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== LOGIN SECTION ===== -->
+  <section class="login-page">
+    <div class="login-container">
+      <div class="login-image">
+        <picture>
+          <source srcset="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" type="image/webp">
+          <source srcset="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" type="image/webp">
+          <img src="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" alt="Fitness motivation">
+        </picture>
+        <div class="overlay">
+          <h2>Join FitBody</h2>
+          <p>Start your transformation today. Your journey to a stronger, healthier you begins here.</p>
+        </div>
+      </div>
+      <div class="login-form">
+        <a href="index.html" class="logo"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+        <h2 id="formTitle">Welcome Back</h2>
+        <p id="formSubtitle">Sign in to continue your fitness journey</p>
+
+        <!-- Tabs -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="signin">Sign In</button>
+          <button class="auth-tab" data-tab="signup">Sign Up</button>
+        </div>
+
+        <!-- SIGN IN FORM -->
+        <form class="auth-form active" id="loginForm">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Your username" autocomplete="username">
+            <div class="error-msg" id="usernameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" autocomplete="email">
+            <div class="error-msg" id="emailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-toggle">
+              <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+              <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">Show</button>
+            </div>
+            <div class="error-msg" id="passwordError"></div>
+          </div>
+          <div class="form-options">
+            <label>
+              <input type="checkbox" checked> Remember me
+            </label>
+            <a href="#">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign In</button>
+          <div class="auth-divider">
+            <span>or</span>
+          </div>
+          <button type="button" class="google-btn" onclick="window.location.href='404.html'">
+            <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.84z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06L5.84 9.9C6.71 7.3 9.14 5.38 12 5.38z"/>
+            </svg>
+            Continue with Google
+          </button>
+          <div class="form-footer">
+            Don't have an account? <a href="#" id="switchToSignup">Sign Up</a>
+          </div>
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form class="auth-form" id="signupForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe" autocomplete="name">
+            <div class="error-msg" id="nameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email Address</label>
+            <input type="email" id="signupEmail" placeholder="your@email.com" autocomplete="email">
+            <div class="error-msg" id="signupEmailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Password</label>
+            <div class="password-toggle">
+              <input type="password" id="signupPassword" placeholder="At least 6 characters" autocomplete="new-password">
+              <button type="button" class="toggle-btn" onclick="togglePassword('signupPassword', this)">Show</button>
+            </div>
+            <div class="error-msg" id="signupPasswordError"></div>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-toggle">
+              <input type="password" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password">
+              <button type="button" class="toggle-btn" onclick="togglePassword('confirmPassword', this)">Show</button>
+            </div>
+            <div class="error-msg" id="confirmError"></div>
+          </div>
+          <button type="submit" class="btn btn-primary">Create Account</button>
+          <div class="auth-divider">
+            <span>or</span>
+          </div>
+          <button type="button" class="google-btn" onclick="window.location.href='404.html'">
+            <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.1c-.22-.66-.35-1.36-.35-2.1s.13-1.44.35-2.1V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l3.66-2.84z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06L5.84 9.9C6.71 7.3 9.14 5.38 12 5.38z"/>
+            </svg>
+            Continue with Google
+          </button>
+          <div class="form-footer">
+            Already have an account? <a href="#" id="switchToSignin">Sign In</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function togglePassword(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const isPassword = input.type === 'password';
+      input.type = isPassword ? 'text' : 'password';
+      btn.textContent = isPassword ? 'Hide' : 'Show';
+    }
+  </script>
+  <script src="js/script.js"></script>
+  <script>
+    // ===== TAB SWITCHING =====
+    const tabs = document.querySelectorAll('.auth-tab');
+    const forms = {
+      signin: document.getElementById('loginForm'),
+      signup: document.getElementById('signupForm')
+    };
+    const formTitle = document.getElementById('formTitle');
+    const formSubtitle = document.getElementById('formSubtitle');
+
+    function switchTab(tabId) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === tabId));
+      Object.values(forms).forEach(f => f.classList.remove('active'));
+      forms[tabId].classList.add('active');
+
+      if (tabId === 'signin') {
+        formTitle.textContent = 'Welcome Back';
+        formSubtitle.textContent = 'Sign in to continue your fitness journey';
+      } else {
+        formTitle.textContent = 'Create Account';
+        formSubtitle.textContent = 'Start your transformation today';
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+    });
+
+    document.getElementById('switchToSignup').addEventListener('click', e => {
+      e.preventDefault();
+      switchTab('signup');
+    });
+
+    document.getElementById('switchToSignin').addEventListener('click', e => {
+      e.preventDefault();
+      switchTab('signin');
+    });
+
+    // Override script.js form handlers for signup form IDs
+    document.addEventListener('DOMContentLoaded', () => {
+      const signupForm = document.getElementById('signupForm');
+      if (signupForm) {
+        const originalSubmit = signupForm._submitHandler;
+        signupForm.addEventListener('submit', e => {
+          e.preventDefault();
+          let valid = true;
+
+          const name = document.getElementById('name');
+          const email = document.getElementById('signupEmail');
+          const password = document.getElementById('signupPassword');
+          const confirm = document.getElementById('confirmPassword');
+
+          const fields = [
+            { el: name, id: 'nameError', msg: 'Name is required' },
+            { el: email, id: 'signupEmailError', msg: 'Email is required', regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, regexMsg: 'Enter a valid email' },
+            { el: password, id: 'signupPasswordError', msg: 'Password is required', min: 6, minMsg: 'At least 6 characters' },
+            { el: confirm, id: 'confirmError', msg: 'Please confirm your password' }
+          ];
+
+          fields.forEach(f => {
+            const group = f.el.closest('.form-group');
+            const errorEl = document.getElementById(f.id);
+            group.classList.remove('error');
+
+            if (!f.el.value.trim()) {
+              errorEl.textContent = f.msg;
+              group.classList.add('error');
+              valid = false;
+            } else if (f.regex && !f.regex.test(f.el.value.trim())) {
+              errorEl.textContent = f.regexMsg;
+              group.classList.add('error');
+              valid = false;
+            } else if (f.min && f.el.value.length < f.min) {
+              errorEl.textContent = f.minMsg;
+              group.classList.add('error');
+              valid = false;
+            }
+          });
+
+          if (password.value !== confirm.value) {
+            const group = confirm.closest('.form-group');
+            const errorEl = document.getElementById('confirmError');
+            errorEl.textContent = 'Passwords do not match';
+            group.classList.add('error');
+            valid = false;
+          }
+
+          if (valid) {
+            const btn = signupForm.querySelector('.btn');
+            btn.textContent = 'Creating Account...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+              btn.textContent = 'Create Account';
+              btn.disabled = false;
+              // Toast
+              const toast = document.createElement('div');
+              toast.className = 'toast';
+              toast.textContent = 'Account created! Please sign in.';
+              toast.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+              document.body.appendChild(toast);
+              setTimeout(() => toast.remove(), 3000);
+              signupForm.reset();
+              switchTab('signin');
+            }, 1500);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

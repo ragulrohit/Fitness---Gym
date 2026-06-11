@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes - FitBody</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="health-dashboard-body">
+  <aside class="health-sidebar">
+    <a href="index.html" class="health-brand"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+    <div class="sidebar-user-card">
+      <strong class="sidebar-username">Username</strong>
+      <span><i></i> Online</span>
+    </div>
+    <nav class="health-menu" aria-label="Dashboard navigation">
+      <a href="dashboard.html"><span>OV</span> Overview</a>
+      <a href="workouts.html"><span>WO</span> Workouts</a>
+      <a href="classes.html" class="active"><span>CL</span> Classes</a>
+      <a href="membership.html"><span>MS</span> Membership</a>
+    </nav>
+    <a href="index.html" class="health-logout">Log Out</a>
+  </aside>
+
+  <main class="health-dashboard">
+    <header class="health-topbar">
+      <div>
+        <h1>Gym Classes</h1>
+        <p>Book upcoming classes and keep your weekly schedule moving.</p>
+      </div>
+      <button class="notification-btn" type="button" aria-label="Notifications">!</button>
+    </header>
+
+    <section class="health-panels">
+      <article class="health-panel appointments-panel">
+        <div class="panel-heading">
+          <h2>Upcoming Classes</h2>
+          <a href="programs.html">Explore -></a>
+        </div>
+        <div class="appointment-item">
+          <div class="date-box"><strong>12</strong><span>Jun</span></div>
+          <div>
+            <h3>Strength Foundations</h3>
+            <p>Coach Alex - Weight Floor</p>
+            <span>10:30 AM - 12 spots left</span>
+          </div>
+          <em>Booked</em>
+        </div>
+        <div class="appointment-item">
+          <div class="date-box"><strong>18</strong><span>Jun</span></div>
+          <div>
+            <h3>HIIT Cardio Blast</h3>
+            <p>Coach Mike - Studio 2</p>
+            <span>7:00 AM - 8 spots left</span>
+          </div>
+          <em>Book</em>
+        </div>
+        <div class="appointment-item">
+          <div class="date-box"><strong>20</strong><span>Jun</span></div>
+          <div>
+            <h3>Yoga &amp; Mobility</h3>
+            <p>Coach Sarah - Studio 1</p>
+            <span>6:30 PM - 10 spots left</span>
+          </div>
+          <em>Book</em>
+        </div>
+      </article>
+
+      <article class="health-panel vitals-panel">
+        <div class="panel-heading">
+          <h2>This Week</h2>
+          <a href="#">Calendar -></a>
+        </div>
+        <div class="vital-cards">
+          <div class="vital-card"><span>Booked</span><strong>3</strong><i style="width: 70%"></i></div>
+          <div class="vital-card"><span>Completed</span><strong>2</strong><i style="width: 55%"></i></div>
+          <div class="vital-card"><span>Class Minutes</span><strong>135</strong><i style="width: 72%"></i></div>
+          <div class="vital-card"><span>Favorite</span><strong>HIIT</strong><i style="width: 80%"></i></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

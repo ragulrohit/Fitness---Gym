@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership - FitBody</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="health-dashboard-body">
+  <aside class="health-sidebar">
+    <a href="index.html" class="health-brand"><img src="images/Stackly_logo.png" alt="Stackly logo">Fit<span>Body</span></a>
+    <div class="sidebar-user-card">
+      <strong class="sidebar-username">Username</strong>
+      <span><i></i> Online</span>
+    </div>
+    <nav class="health-menu" aria-label="Dashboard navigation">
+      <a href="dashboard.html"><span>OV</span> Overview</a>
+      <a href="workouts.html"><span>WO</span> Workouts</a>
+      <a href="classes.html"><span>CL</span> Classes</a>
+      <a href="membership.html" class="active"><span>MS</span> Membership</a>
+    </nav>
+    <a href="index.html" class="health-logout">Log Out</a>
+  </aside>
+
+  <main class="health-dashboard">
+    <header class="health-topbar">
+      <div>
+        <h1>Membership</h1>
+        <p>Manage your FitBody plan, benefits, and billing details.</p>
+      </div>
+      <button class="notification-btn" type="button" aria-label="Notifications">!</button>
+    </header>
+
+    <section class="health-welcome-card">
+      <div class="welcome-copy">
+        <p class="eyebrow">Current Plan</p>
+        <h2>Pro<br><span>Membership</span></h2>
+        <div class="health-score-row">
+          <div class="score-ring">
+            <strong>$59</strong>
+            <span>/ mo</span>
+          </div>
+          <div>
+            <h3>Active Until July 9, 2026</h3>
+            <p>Includes 24/7 gym access, unlimited group classes, and 2 personal training sessions.</p>
+          </div>
+        </div>
+        <div class="health-actions">
+          <a href="pricing.html" class="health-primary-action">Upgrade Plan</a>
+          <a href="dashboard.html" class="health-secondary-action">Back to Overview</a>
+        </div>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-tile">
+          <span>Guest Passes</span>
+          <strong>2</strong>
+          <p>Available</p>
+        </article>
+        <article class="metric-tile">
+          <span>Trainer Sessions</span>
+          <strong>1 <small>/ 2</small></strong>
+          <p>Remaining</p>
+        </article>
+        <article class="metric-tile">
+          <span>Classes</span>
+          <strong>Unlimited</strong>
+          <p>Included</p>
+        </article>
+        <article class="metric-tile">
+          <span>Next Billing</span>
+          <strong>Jul 9</strong>
+          <p>Auto Pay</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="health-panels bottom-panels">
+      <article class="health-panel">
+        <div class="panel-heading">
+          <h2>Plan Benefits</h2>
+          <a href="pricing.html">Compare -></a>
+        </div>
+        <div class="goal-list">
+          <div><span>Gym Access</span><strong>24/7</strong></div>
+          <div><span>Group Classes</span><strong>Unlimited</strong></div>
+          <div><span>Nutrition Consultation</span><strong>Included</strong></div>
+        </div>
+      </article>
+
+      <article class="health-panel">
+        <div class="panel-heading">
+          <h2>Billing</h2>
+          <a href="#">Update -></a>
+        </div>
+        <div class="goal-list">
+          <div><span>Payment Method</span><strong>Visa **** 2481</strong></div>
+          <div><span>Monthly Cost</span><strong>$59</strong></div>
+          <div><span>Status</span><strong>Active</strong></div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
