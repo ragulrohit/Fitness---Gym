@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign In - FitBody</title>
+  <title>Sign Up - FitBody</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💪%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%AA%3C/text%3E%3C/svg%3E">
   <style>
     .auth-form {
       display: block;
@@ -33,24 +33,6 @@
       color: var(--light);
     }
 
-    .toast {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      padding: 16px 28px;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: 600;
-      z-index: 9999;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      animation: slideUp 0.3s ease forwards;
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @media (max-width: 768px) {
       .login-page {
         align-items: flex-start;
@@ -60,7 +42,6 @@
       .login-form {
         padding: 30px;
       }
-
     }
 
     @media (max-width: 480px) {
@@ -71,7 +52,6 @@
   </style>
 </head>
 <body>
-  <!-- ===== NAVBAR ===== -->
   <nav class="navbar scrolled">
     <div class="container">
       <a href="index.html" class="logo"><img src="images/Stackly_logo.png" alt="Stackly logo"><span class="brand-name">Fit<span class="brand-accent">Body</span></span></a>
@@ -81,7 +61,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="trainers.html">Trainers</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="login.html" class="btn btn-primary">Join Now</a></li>
+        <li><a href="login.html" class="btn btn-primary">Sign In</a></li>
       </ul>
       <div class="hamburger">
         <span></span><span></span><span></span>
@@ -89,12 +69,10 @@
     </div>
   </nav>
 
-  <!-- ===== LOGIN SECTION ===== -->
   <section class="login-page">
     <div class="login-container">
       <div class="login-image">
         <picture>
-          <source srcset="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" type="image/webp">
           <source srcset="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" type="image/webp">
           <img src="images/photo-1571019613454-1cb2f99b2d8b-w600.webp" alt="Fitness motivation">
         </picture>
@@ -105,15 +83,14 @@
       </div>
       <div class="login-form">
         <a href="index.html" class="logo"><img src="images/Stackly_logo.png" alt="Stackly logo"><span class="brand-name">Fit<span class="brand-accent">Body</span></span></a>
-        <h2 id="formTitle">Welcome Back</h2>
-        <p id="formSubtitle">Sign in to continue your fitness journey</p>
+        <h2>Create Account</h2>
+        <p>Start your transformation today</p>
 
-        <!-- SIGN IN FORM -->
-        <form class="auth-form active" id="loginForm">
+        <form class="auth-form" id="signupForm">
           <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Your username" autocomplete="username">
-            <div class="error-msg" id="usernameError"></div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe" autocomplete="name">
+            <div class="error-msg" id="nameError"></div>
           </div>
           <div class="form-group">
             <label for="email">Email Address</label>
@@ -123,18 +100,20 @@
           <div class="form-group">
             <label for="password">Password</label>
             <div class="password-toggle">
-              <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+              <input type="password" id="password" placeholder="At least 6 characters" autocomplete="new-password">
               <button type="button" class="toggle-btn" onclick="togglePassword('password', this)">Show</button>
             </div>
             <div class="error-msg" id="passwordError"></div>
           </div>
-          <div class="form-options">
-            <label>
-              <input type="checkbox" checked> Remember me
-            </label>
-            <a href="signup.html">Forgot password?</a>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <div class="password-toggle">
+              <input type="password" id="confirmPassword" placeholder="Confirm your password" autocomplete="new-password">
+              <button type="button" class="toggle-btn" onclick="togglePassword('confirmPassword', this)">Show</button>
+            </div>
+            <div class="error-msg" id="confirmError"></div>
           </div>
-          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button type="submit" class="btn btn-primary">Create Account</button>
           <div class="auth-divider">
             <span>or</span>
           </div>
@@ -147,6 +126,9 @@
             </svg>
             Continue with Google
           </button>
+          <div class="form-footer">
+            Already have an account? <a href="login.html">Sign In</a>
+          </div>
         </form>
       </div>
     </div>

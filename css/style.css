@@ -195,7 +195,14 @@ img {
   flex-shrink: 0;
 }
 
-.logo span {
+.logo .brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 0.9;
+  transform: translateY(4px);
+}
+
+.logo .brand-accent {
   background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -242,6 +249,14 @@ img {
   padding: 10px 24px;
   font-size: 14px;
   white-space: nowrap;
+}
+
+.nav-links .btn::after {
+  display: none;
+}
+
+.nav-links .btn-primary:hover {
+  color: var(--light);
 }
 
 .hamburger {
@@ -1867,7 +1882,13 @@ a[aria-label="YouTube"] {
   box-shadow: 0 0 0 6px rgba(22, 214, 143, 0.12);
 }
 
-.health-brand span {
+.health-brand .brand-name {
+  display: inline-flex;
+  justify-content: center;
+  line-height: 0.9;
+}
+
+.health-brand .brand-accent {
   color: var(--primary);
 }
 

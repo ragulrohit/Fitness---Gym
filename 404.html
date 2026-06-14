@@ -309,11 +309,21 @@
       <p>This route missed its set. Head back to the gym floor, explore programs, or search for the page you wanted.</p>
 
       <div class="error-actions">
-        <a href="index.html" class="btn btn-primary">Go Home</a>
+        <button type="button" class="btn btn-primary" id="goBackBtn">Go Back</button>
       </div>
     </div>
   </section>
 
   <script src="js/script.js"></script>
+  <script>
+    document.getElementById('goBackBtn').addEventListener('click', () => {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>

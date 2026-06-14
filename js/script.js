@@ -252,8 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.textContent = 'Create Account';
           btn.disabled = false;
-          showToast('Account created! Welcome to FitBody.', 'success');
+          showToast('Account created! Redirecting to sign in...', 'success');
           signupForm.reset();
+          setTimeout(() => {
+            window.location.href = 'login.html';
+          }, 700);
         }, 1500);
       }
     });
