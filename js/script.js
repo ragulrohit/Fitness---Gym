@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     usernameEl.textContent = savedUsername || 'Username';
   });
 
-  document.querySelectorAll('.sidebar-email').forEach(emailEl => {
+  document.querySelectorAll('.sidebar-email, .topbar-email').forEach(emailEl => {
     const savedEmail = localStorage.getItem('fitbodyEmail');
 
     if (!savedEmail) {
