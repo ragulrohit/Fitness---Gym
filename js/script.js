@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Simulate login
         const btn = loginForm.querySelector('.btn');
         localStorage.setItem('fitbodyUsername', username.value.trim());
+        localStorage.setItem('fitbodyEmail', email.value.trim());
         btn.textContent = 'Signing In...';
         btn.disabled = true;
 
@@ -153,6 +154,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.sidebar-username').forEach(usernameEl => {
     const savedUsername = localStorage.getItem('fitbodyUsername');
     usernameEl.textContent = savedUsername || 'Username';
+  });
+
+  document.querySelectorAll('.sidebar-email').forEach(emailEl => {
+    const savedEmail = localStorage.getItem('fitbodyEmail');
+
+    if (!savedEmail) {
+      emailEl.hidden = true;
+      emailEl.removeAttribute('href');
+      emailEl.textContent = '';
+      return;
+    }
+
+    emailEl.hidden = false;
+    emailEl.textContent = savedEmail;
+    emailEl.href = `mailto:${savedEmail}`;
   });
 
   // ===== DASHBOARD LOGOUT CONFIRMATION =====
@@ -246,6 +262,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (valid) {
         const btn = signupForm.querySelector('.btn');
+        localStorage.setItem('fitbodyUsername', name.value.trim());
+        localStorage.setItem('fitbodyEmail', email.value.trim());
         btn.textContent = 'Creating Account...';
         btn.disabled = true;
 
