@@ -1459,7 +1459,8 @@ a[aria-label="YouTube"] {
   font-size: 14px;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 14px 18px;
   border-radius: 8px;
@@ -1470,7 +1471,14 @@ a[aria-label="YouTube"] {
   transition: var(--transition);
 }
 
-.form-group input:focus {
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(255, 75, 43, 0.2);
@@ -1584,6 +1592,48 @@ a[aria-label="YouTube"] {
   text-decoration: underline;
 }
 
+/* ===== CONTACT ===== */
+.contact-section {
+  padding: 100px 0;
+  background: var(--dark);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-details .section-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-details .info-card {
+  margin-bottom: 18px;
+}
+
+.contact-details a {
+  color: var(--gray);
+}
+
+.contact-details a:hover {
+  color: var(--primary);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 36px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  padding: 16px;
+}
+
 @media (max-width: 1200px) {
   .nav-links {
     gap: 18px;
@@ -1678,6 +1728,10 @@ a[aria-label="YouTube"] {
 
   .page-hero-content p {
     font-size: 17px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 
   .program-detail-card {
